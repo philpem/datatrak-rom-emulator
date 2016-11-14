@@ -11457,9 +11457,9 @@ Source: www.kingbright.com</description>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="10u"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C4" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C5" library="rcl" deviceset="C-EU" device="C0805"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
@@ -11481,15 +11481,15 @@ Source: www.kingbright.com</description>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="C9" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
-<part name="C10" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C13" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C14" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C15" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C16" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C17" library="rcl" deviceset="C-EU" device="C0805"/>
-<part name="C18" library="rcl" deviceset="C-EU" device="C0805"/>
+<part name="C10" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C12" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C13" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C14" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C15" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C16" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C17" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
+<part name="C18" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
@@ -11507,17 +11507,17 @@ Source: www.kingbright.com</description>
 <part name="Q1" library="transistor-npn" deviceset="BC847*" device="SMD" technology="C"/>
 <part name="Q2" library="transistor-npn" deviceset="BC847*" device="SMD" technology="C"/>
 <part name="Q3" library="transistor-npn" deviceset="BC847*" device="SMD" technology="C"/>
-<part name="LED1" library="led" deviceset="LED" device="SML0805"/>
-<part name="LED2" library="led" deviceset="LED" device="SML0805"/>
-<part name="LED3" library="led" deviceset="LED" device="SML0805"/>
+<part name="LED1" library="led" deviceset="LED" device="SML0805" value="RED"/>
+<part name="LED2" library="led" deviceset="LED" device="SML0805" value="YELLOW"/>
+<part name="LED3" library="led" deviceset="LED" device="SML0805" value="GREEN"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0805"/>
 <part name="+3V10" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R0805"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0805"/>
-<part name="R8" library="rcl" deviceset="R-EU_" device="R0805"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="R0805" value="4k7"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R0805" value="4k7"/>
 </parts>
 <sheets>
 <sheet>
@@ -11884,11 +11884,12 @@ Source: www.kingbright.com</description>
 <pinref part="U2" gate="A" pin="1B3"/>
 <wire x1="210.82" y1="215.9" x2="215.9" y2="215.9" width="0.1524" layer="91"/>
 <junction x="210.82" y="215.9"/>
-<wire x1="215.9" y1="218.44" x2="210.82" y2="218.44" width="0.1524" layer="91"/>
-<junction x="210.82" y="218.44"/>
 <pinref part="U2" gate="A" pin="1B1"/>
 <wire x1="210.82" y1="220.98" x2="215.9" y2="220.98" width="0.1524" layer="91"/>
 <junction x="210.82" y="220.98"/>
+<pinref part="U2" gate="A" pin="1B2"/>
+<wire x1="215.9" y1="218.44" x2="210.82" y2="218.44" width="0.1524" layer="91"/>
+<junction x="210.82" y="218.44"/>
 </segment>
 <segment>
 <pinref part="U3" gate="A" pin="GND_2"/>
@@ -14088,14 +14089,6 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB02_06"/>
 </segment>
 </net>
-<net name="A_LV18" class="0">
-<segment>
-<wire x1="172.72" y1="53.34" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="33.02" x2="170.18" y2="30.48" width="0.1524" layer="91"/>
-<label x="172.72" y="40.64" size="1.778" layer="95" rot="R90"/>
-<pinref part="IC2" gate="G$1" pin="PB04_04"/>
-</segment>
-</net>
 <net name="A_LV8" class="0">
 <segment>
 <wire x1="170.18" y1="53.34" x2="170.18" y2="33.02" width="0.1524" layer="91"/>
@@ -14262,6 +14255,14 @@ Source: www.kingbright.com</description>
 <pinref part="Q3" gate="G$1" pin="B"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="345.44" y1="73.66" x2="309.88" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="A_LV2" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="PB04_04"/>
+<wire x1="172.72" y1="53.34" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="33.02" x2="170.18" y2="30.48" width="0.1524" layer="91"/>
+<label x="172.72" y="40.64" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
@@ -14521,6 +14522,25 @@ Source: www.kingbright.com</description>
 </sheet>
 </sheets>
 <errors>
+<approved hash="101,1,38.1,187.96,X1-A14,S,,,,"/>
+<approved hash="101,1,38.1,185.42,X1-A15,S,,,,"/>
+<approved hash="101,1,76.2,187.96,X1-B14,S,,,,"/>
+<approved hash="101,1,76.2,185.42,X1-B15,S,,,,"/>
+<approved hash="101,1,114.3,220.98,X1-C1,S,,,,"/>
+<approved hash="104,1,190.5,220.98,U1A,VCCB_2,+5V,,,"/>
+<approved hash="104,1,190.5,218.44,U1A,VCCB,+5V,,,"/>
+<approved hash="104,1,119.38,124.46,U1B,VCCA_2,+3V3,,,"/>
+<approved hash="104,1,119.38,121.92,U1B,VCCA,+3V3,,,"/>
+<approved hash="104,1,251.46,220.98,U2A,VCCB_2,+5V,,,"/>
+<approved hash="104,1,251.46,218.44,U2A,VCCB,+5V,,,"/>
+<approved hash="104,1,182.88,124.46,U2B,VCCA_2,+3V3,,,"/>
+<approved hash="104,1,182.88,121.92,U2B,VCCA,+3V3,,,"/>
+<approved hash="104,1,312.42,220.98,U3A,VCCB_2,+5V,,,"/>
+<approved hash="104,1,312.42,218.44,U3A,VCCB,+5V,,,"/>
+<approved hash="104,1,271.78,124.46,U3B,VCCA_2,+3V3,,,"/>
+<approved hash="104,1,271.78,121.92,U3B,VCCA,+3V3,,,"/>
+<approved hash="104,2,177.8,203.2,U4,VDD_2,+3V3,,,"/>
+<approved hash="104,2,177.8,200.66,U4,VDD,+3V3,,,"/>
 <approved hash="206,1,215.9,200.66,GND,,,,,"/>
 <approved hash="206,1,215.9,203.2,GND,,,,,"/>
 <approved hash="206,1,215.9,205.74,GND,,,,,"/>
@@ -14559,6 +14579,10 @@ Source: www.kingbright.com</description>
 <approved hash="208,4,208.28,104.14,GND,sup,,,,"/>
 <approved hash="208,4,203.2,104.14,GND,sup,,,,"/>
 <approved hash="208,4,165.1,104.14,GND,sup,,,,"/>
+<approved hash="113,1,194.206,131.976,FRAME1,,,,,"/>
+<approved hash="113,2,194.206,131.976,FRAME2,,,,,"/>
+<approved hash="113,3,194.206,131.976,FRAME3,,,,,"/>
+<approved hash="113,4,194.206,131.976,FRAME4,,,,,"/>
 </errors>
 </schematic>
 </drawing>
