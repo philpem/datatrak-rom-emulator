@@ -71,7 +71,6 @@
 <wire x1="151.11" y1="58.09" x2="0" y2="58.09" width="0" layer="20"/>
 <wire x1="0" y1="58.09" x2="0" y2="0" width="0" layer="20"/>
 <wire x1="50.8" y1="58.42" x2="50.8" y2="0" width="0.4064" layer="21"/>
-<wire x1="151.13" y1="60.325" x2="151.13" y2="-5.715" width="0.4064" layer="20"/>
 <text x="123.825" y="16.51" size="2.1844" layer="25" align="top-right">DATATRAK LOCATOR Mk.II
 ROM CARTRIDGE EMULATOR
 REV A  2016-11-14  PAP</text>
@@ -2467,7 +2466,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <library name="chaoslogo">
 <packages>
 <package name="CHAOSLOGO">
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="10.67308125"/>
 <vertex x="-4.01289375" y="8.109584375"/>
 <vertex x="-3.991940625" y="8.095615625"/>
@@ -2572,7 +2571,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.970984375" y="10.645140625"/>
 <vertex x="-3.98495625" y="10.645140625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="10.67308125"/>
 <vertex x="-4.110684375" y="10.67308125"/>
 <vertex x="-4.208475" y="10.659109375"/>
@@ -2673,7 +2672,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.97796875" y="8.095615625"/>
 <vertex x="-3.97796875" y="10.659109375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="8.04671875"/>
 <vertex x="-4.01289375" y="6.89419375"/>
 <vertex x="-3.964" y="6.83133125"/>
@@ -2696,7 +2695,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.964" y="8.067675"/>
 <vertex x="-3.998925" y="8.08164375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="8.654415625"/>
 <vertex x="4.15256875" y="8.626475"/>
 <vertex x="4.05478125" y="8.59155"/>
@@ -2712,7 +2711,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.475025" y="7.830184375"/>
 <vertex x="4.201465625" y="7.830184375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="7.830184375"/>
 <vertex x="3.475025" y="7.830184375"/>
 <vertex x="3.46105625" y="7.795259375"/>
@@ -2863,7 +2862,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.145584375" y="5.53910625"/>
 <vertex x="4.145584375" y="7.84415625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.17813125" y="5.301615625"/>
 <vertex x="-0.26195" y="5.266690625"/>
 <vertex x="-0.373709375" y="5.21779375"/>
@@ -2966,7 +2965,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.080340625" y="5.301615625"/>
 <vertex x="-0.164159375" y="5.32955625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="5.525134375"/>
 <vertex x="2.748584375" y="5.525134375"/>
 <vertex x="2.72763125" y="5.483225"/>
@@ -3147,7 +3146,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.20845" y="4.896484375"/>
 <vertex x="4.20845" y="5.53211875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="5.525134375"/>
 <vertex x="-3.782390625" y="5.525134375"/>
 <vertex x="-3.817315625" y="5.615940625"/>
@@ -3276,7 +3275,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.026865625" y="6.76148125"/>
 <vertex x="-4.026865625" y="5.483225"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.293415625" y="7.830184375"/>
 <vertex x="3.405175" y="7.830184375"/>
 <vertex x="3.41914375" y="7.91400625"/>
@@ -3294,7 +3293,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.31436875" y="7.934959375"/>
 <vertex x="3.3004" y="7.830184375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-9.279584375" y="10.093325"/>
 <vertex x="-9.32848125" y="10.07236875"/>
 <vertex x="-9.39134375" y="9.98855"/>
@@ -3553,7 +3552,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-9.29355625" y="10.00950625"/>
 <vertex x="-9.32848125" y="10.04443125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="6.803390625"/>
 <vertex x="-4.026865625" y="6.817359375"/>
 <vertex x="-4.08973125" y="6.887209375"/>
@@ -4131,7 +4130,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.075759375" y="4.079240625"/>
 <vertex x="-4.075759375" y="6.65670625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-3.67063125" y="3.0734"/>
 <vertex x="-3.53093125" y="3.0734"/>
 <vertex x="-3.551884375" y="3.12229375"/>
@@ -4224,7 +4223,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.726509375" y="3.12928125"/>
 <vertex x="-3.712540625" y="3.080384375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-3.67063125" y="3.0734"/>
 <vertex x="-3.656659375" y="3.01751875"/>
 <vertex x="-3.62871875" y="2.905759375"/>
@@ -4370,7 +4369,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.48901875" y="3.0734"/>
 <vertex x="-3.62871875" y="3.0734"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="4.06526875"/>
 <vertex x="-4.03385" y="4.0513"/>
 <vertex x="-4.11766875" y="4.00240625"/>
@@ -4423,7 +4422,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.005909375" y="3.98145"/>
 <vertex x="-4.005909375" y="4.06526875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="2.14439375"/>
 <vertex x="-4.01289375" y="0.99186875"/>
 <vertex x="-3.901134375" y="0.95694375"/>
@@ -4477,7 +4476,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.98495625" y="2.088515625"/>
 <vertex x="-4.03385" y="2.10946875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-3.761434375" y="-0.167640625"/>
 <vertex x="-3.8243" y="-0.181609375"/>
 <vertex x="-3.83826875" y="-0.23050625"/>
@@ -4502,7 +4501,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.621734375" y="-0.2794"/>
 <vertex x="-3.691584375" y="-0.216534375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="0.74739375"/>
 <vertex x="-4.01289375" y="-1.711325"/>
 <vertex x="-4.01289375" y="-1.823084375"/>
@@ -4619,7 +4618,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.01289375" y="0.71945625"/>
 <vertex x="-4.061790625" y="0.740409375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="0.74739375"/>
 <vertex x="-4.075759375" y="0.76835"/>
 <vertex x="-4.17355" y="0.803275"/>
@@ -5035,7 +5034,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.970984375" y="-1.72529375"/>
 <vertex x="-3.970984375" y="0.733425"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="-3.71601875"/>
 <vertex x="-4.01289375" y="-5.581015625"/>
 <vertex x="-3.991940625" y="-5.546090625"/>
@@ -5068,7 +5067,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.957015625" y="-3.75793125"/>
 <vertex x="-4.026865625" y="-3.743959375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="-3.71601875"/>
 <vertex x="-4.04781875" y="-3.70205"/>
 <vertex x="-4.145609375" y="-3.68808125"/>
@@ -5140,7 +5139,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.01289375" y="-5.650865625"/>
 <vertex x="-4.01289375" y="-3.78586875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-1.980259375" y="0.92900625"/>
 <vertex x="-2.02915625" y="0.901065625"/>
 <vertex x="-2.09201875" y="0.88709375"/>
@@ -5468,7 +5467,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-1.88246875" y="0.81724375"/>
 <vertex x="-1.95231875" y="0.901065625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-3.55886875" y="-5.525134375"/>
 <vertex x="-3.859225" y="-5.525134375"/>
 <vertex x="-3.90811875" y="-5.581015625"/>
@@ -5483,7 +5482,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.59379375" y="-5.560059375"/>
 <vertex x="-3.56585625" y="-5.53211875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.075734375" y="-5.525134375"/>
 <vertex x="3.342309375" y="-5.525134375"/>
 <vertex x="3.37025" y="-5.56704375"/>
@@ -5519,7 +5518,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.08970625" y="-5.553075"/>
 <vertex x="4.08271875" y="-5.511165625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.075734375" y="-5.525134375"/>
 <vertex x="4.061765625" y="-5.46226875"/>
 <vertex x="4.026840625" y="-5.36448125"/>
@@ -5729,7 +5728,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.328340625" y="-5.483225"/>
 <vertex x="4.061765625" y="-5.483225"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.083865625" y="-5.525134375"/>
 <vertex x="2.071040625" y="-5.525134375"/>
 <vertex x="2.119934375" y="-5.594984375"/>
@@ -5781,7 +5780,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.10481875" y="-5.60196875"/>
 <vertex x="3.083865625" y="-5.51815"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="-5.67880625"/>
 <vertex x="-4.04781875" y="-5.699759375"/>
 <vertex x="-4.11766875" y="-5.762625"/>
@@ -5855,7 +5854,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.005909375" y="-5.979159375"/>
 <vertex x="-4.005909375" y="-5.699759375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="-6.042025"/>
 <vertex x="-4.01289375" y="-6.09091875"/>
 <vertex x="-4.01289375" y="-6.153784375"/>
@@ -5979,7 +5978,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-3.95003125" y="-5.88835625"/>
 <vertex x="-4.01289375" y="-5.93725"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-4.01289375" y="-7.32028125"/>
 <vertex x="-4.01289375" y="-6.1468"/>
 <vertex x="-4.026865625" y="-6.23061875"/>
@@ -5995,7 +5994,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-4.026865625" y="-7.292340625"/>
 <vertex x="-4.01289375" y="-7.341234375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-12.30756875"/>
 <vertex x="4.201465625" y="-11.96530625"/>
 <vertex x="4.180509375" y="-11.96530625"/>
@@ -6226,7 +6225,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.173525" y="-12.37741875"/>
 <vertex x="4.236390625" y="-12.36345"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-12.30756875"/>
 <vertex x="4.250359375" y="-12.30756875"/>
 <vertex x="4.36211875" y="-12.2936"/>
@@ -6658,7 +6657,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.19448125" y="-11.96530625"/>
 <vertex x="4.19448125" y="-12.30756875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-9.262109375"/>
 <vertex x="4.201465625" y="-9.15035"/>
 <vertex x="4.15256875" y="-9.185275"/>
@@ -6673,7 +6672,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.19448125" y="-9.262109375"/>
 <vertex x="4.20845" y="-9.248140625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-9.262109375"/>
 <vertex x="4.271315625" y="-9.213215625"/>
 <vertex x="4.355134375" y="-9.15035"/>
@@ -6853,7 +6852,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.166540625" y="-9.15035"/>
 <vertex x="4.166540625" y="-9.262109375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-8.88491875"/>
 <vertex x="4.201465625" y="-7.550784375"/>
 <vertex x="4.166540625" y="-7.56475625"/>
@@ -7117,7 +7116,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.22940625" y="-8.95476875"/>
 <vertex x="4.243375" y="-8.9408"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-7.45299375"/>
 <vertex x="4.201465625" y="-7.38314375"/>
 <vertex x="4.11764375" y="-7.446009375"/>
@@ -7128,7 +7127,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.131615625" y="-7.480934375"/>
 <vertex x="4.201465625" y="-7.45998125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="7.903515625" y="-0.88709375"/>
 <vertex x="7.88954375" y="-0.970915625"/>
 <vertex x="7.86160625" y="-1.054734375"/>
@@ -7145,7 +7144,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="7.96638125" y="-0.915034375"/>
 <vertex x="7.89653125" y="-0.880109375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="5.2562" y="-0.08381875"/>
 <vertex x="5.20730625" y="-0.097790625"/>
 <vertex x="5.20730625" y="-0.181609375"/>
@@ -7376,7 +7375,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="5.353990625" y="-0.041909375"/>
 <vertex x="5.24223125" y="-0.041909375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="5.30509375" y="-4.13511875"/>
 <vertex x="4.934890625" y="-4.13511875"/>
 <vertex x="4.934890625" y="-4.14210625"/>
@@ -7537,7 +7536,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="5.319065625" y="-4.17004375"/>
 <vertex x="5.333034375" y="-4.10718125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="0.10126875" y="-3.450590625"/>
 <vertex x="0.00348125" y="-3.47154375"/>
 <vertex x="-0.094309375" y="-3.4925"/>
@@ -7585,7 +7584,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="0.052375" y="-3.499484375"/>
 <vertex x="0.052375" y="-3.450590625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-7.299325"/>
 <vertex x="4.201465625" y="-6.768465625"/>
 <vertex x="4.18749375" y="-6.817359375"/>
@@ -7870,14 +7869,14 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.131615625" y="-7.33425"/>
 <vertex x="4.22940625" y="-7.28535625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-5.860415625"/>
 <vertex x="4.201465625" y="-5.65785"/>
 <vertex x="4.180509375" y="-5.67880625"/>
 <vertex x="4.19448125" y="-5.74865625"/>
 <vertex x="4.20845" y="-5.860415625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-5.553075"/>
 <vertex x="4.201465625" y="-4.547234375"/>
 <vertex x="4.18749375" y="-4.52628125"/>
@@ -7928,7 +7927,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.201465625" y="-5.57403125"/>
 <vertex x="4.215434375" y="-5.553075"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-5.553075"/>
 <vertex x="4.236390625" y="-5.50418125"/>
 <vertex x="4.271315625" y="-5.406390625"/>
@@ -7944,7 +7943,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.20845" y="-4.547234375"/>
 <vertex x="4.20845" y="-5.553075"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-2.98958125"/>
 <vertex x="4.201465625" y="-3.40169375"/>
 <vertex x="4.215434375" y="-3.30390625"/>
@@ -7956,7 +7955,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.215434375" y="-2.870834375"/>
 <vertex x="4.201465625" y="-2.98259375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.166540625" y="-2.60540625"/>
 <vertex x="4.131615625" y="-2.619375"/>
 <vertex x="4.033825" y="-2.64033125"/>
@@ -7996,7 +7995,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.15256875" y="-2.682240625"/>
 <vertex x="4.1386" y="-2.59841875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-2.45871875"/>
 <vertex x="4.201465625" y="-0.691515625"/>
 <vertex x="4.180509375" y="-0.670559375"/>
@@ -8100,7 +8099,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.20845" y="-2.43078125"/>
 <vertex x="4.243375" y="-2.416809375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="5.088559375" y="1.194434375"/>
 <vertex x="5.004740625" y="1.13156875"/>
 <vertex x="4.934890625" y="1.06171875"/>
@@ -8120,7 +8119,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="5.13046875" y="1.13156875"/>
 <vertex x="5.09554375" y="1.194434375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="1.781175"/>
 <vertex x="4.201465625" y="-0.04889375"/>
 <vertex x="4.26433125" y="0.02095625"/>
@@ -8514,7 +8513,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.236390625" y="1.76021875"/>
 <vertex x="4.166540625" y="1.76021875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="-0.167640625"/>
 <vertex x="4.18749375" y="-0.181609375"/>
 <vertex x="4.15256875" y="-0.26543125"/>
@@ -8524,7 +8523,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.19448125" y="-0.621665625"/>
 <vertex x="4.19448125" y="-0.174625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="2.018665625"/>
 <vertex x="4.201465625" y="3.22706875"/>
 <vertex x="4.131615625" y="3.14325"/>
@@ -8562,7 +8561,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.22241875" y="2.03961875"/>
 <vertex x="4.236390625" y="2.03961875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="9.67071875" y="11.217909375"/>
 <vertex x="9.60785625" y="11.15504375"/>
 <vertex x="9.5869" y="11.08519375"/>
@@ -8946,7 +8945,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="9.67071875" y="11.182984375"/>
 <vertex x="9.621825" y="11.280775"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="2.018665625"/>
 <vertex x="4.285284375" y="2.032634375"/>
 <vertex x="4.39704375" y="2.053590625"/>
@@ -9457,7 +9456,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.15256875" y="3.241040625"/>
 <vertex x="4.15256875" y="2.032634375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.88244375" y="3.597275"/>
 <vertex x="3.293415625" y="3.597275"/>
 <vertex x="3.307384375" y="3.639184375"/>
@@ -9556,7 +9555,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="1.85450625" y="3.61124375"/>
 <vertex x="1.85450625" y="3.590290625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.88244375" y="3.597275"/>
 <vertex x="1.88244375" y="3.50646875"/>
 <vertex x="1.910384375" y="3.394709375"/>
@@ -9685,7 +9684,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.32135625" y="3.590290625"/>
 <vertex x="1.910384375" y="3.590290625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.852215625" y="4.882515625"/>
 <vertex x="3.901109375" y="4.86854375"/>
 <vertex x="3.98493125" y="4.812665625"/>
@@ -9700,7 +9699,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.852215625" y="4.952365625"/>
 <vertex x="3.852215625" y="4.87553125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="4.201465625" y="3.6322"/>
 <vertex x="4.215434375" y="3.65315625"/>
 <vertex x="4.250359375" y="3.75094375"/>
@@ -9728,12 +9727,12 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="4.20845" y="3.799840625"/>
 <vertex x="4.20845" y="3.61823125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.59024375" y="7.515859375"/>
 <vertex x="-0.576275" y="7.515859375"/>
 <vertex x="-0.576275" y="7.49490625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.938325" y="11.483340625"/>
 <vertex x="1.826565625" y="11.46936875"/>
 <vertex x="1.728775" y="11.448415625"/>
@@ -9970,7 +9969,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="1.95231875" y="11.4554"/>
 <vertex x="1.85453125" y="11.46936875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.59024375" y="12.405359375"/>
 <vertex x="-0.688034375" y="12.391390625"/>
 <vertex x="-0.785825" y="12.37741875"/>
@@ -10494,7 +10493,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.478484375" y="12.398375"/>
 <vertex x="-0.576275" y="12.398375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="0.79976875" y="2.2352"/>
 <vertex x="0.688009375" y="2.22123125"/>
 <vertex x="0.59021875" y="2.207259375"/>
@@ -10606,7 +10605,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="0.918515625" y="2.263140625"/>
 <vertex x="0.820725" y="2.263140625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="0.6461" y="2.905759375"/>
 <vertex x="0.548309375" y="2.891790625"/>
 <vertex x="0.43655" y="2.87781875"/>
@@ -10700,7 +10699,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="0.792784375" y="2.891790625"/>
 <vertex x="0.681025" y="2.891790625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.254965625" y="-1.09664375"/>
 <vertex x="-0.254965625" y="-0.565784375"/>
 <vertex x="-0.31084375" y="-0.57975625"/>
@@ -10721,7 +10720,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.35275625" y="-1.082675"/>
 <vertex x="-0.268934375" y="-1.10363125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.254965625" y="-1.09664375"/>
 <vertex x="-0.24099375" y="-1.10363125"/>
 <vertex x="-0.14320625" y="-1.13855625"/>
@@ -10957,7 +10956,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.303859375" y="-0.57276875"/>
 <vertex x="-0.303859375" y="-1.10363125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.254965625" y="-0.43306875"/>
 <vertex x="-0.254965625" y="0.670559375"/>
 <vertex x="-0.27591875" y="0.663575"/>
@@ -11023,19 +11022,19 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.324815625" y="-0.495934375"/>
 <vertex x="-0.24099375" y="-0.47498125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-9.92220625" y="-3.569334375"/>
 <vertex x="-9.936175" y="-3.58330625"/>
 <vertex x="-9.92220625" y="-3.597275"/>
 <vertex x="-9.92220625" y="-3.57631875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-9.908234375" y="-3.520440625"/>
 <vertex x="-9.92220625" y="-3.534409375"/>
 <vertex x="-9.908234375" y="-3.54838125"/>
 <vertex x="-9.908234375" y="-3.527425"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-9.39134375" y="-0.034925"/>
 <vertex x="-9.489134375" y="-0.05588125"/>
 <vertex x="-9.558984375" y="-0.104775"/>
@@ -11369,7 +11368,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-9.34245" y="-0.027940625"/>
 <vertex x="-9.42626875" y="-0.006984375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="8.17593125" y="-1.17348125"/>
 <vertex x="8.14100625" y="-1.194434375"/>
 <vertex x="8.043215625" y="-1.2573"/>
@@ -11652,7 +11651,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="8.10608125" y="-1.194434375"/>
 <vertex x="8.14100625" y="-1.09664375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.607740625" y="-3.98145"/>
 <vertex x="3.55884375" y="-4.0513"/>
 <vertex x="3.544875" y="-4.163059375"/>
@@ -11684,7 +11683,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.66361875" y="-3.988434375"/>
 <vertex x="3.60075625" y="-3.96748125"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.91508125" y="-3.9116"/>
 <vertex x="3.88015625" y="-3.92556875"/>
 <vertex x="3.817290625" y="-3.939540625"/>
@@ -11697,7 +11696,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.90809375" y="-4.023359375"/>
 <vertex x="3.922065625" y="-3.9116"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.188640625" y="-2.80796875"/>
 <vertex x="3.10481875" y="-2.821940625"/>
 <vertex x="3.03496875" y="-2.821940625"/>
@@ -11740,7 +11739,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.28643125" y="-2.828925"/>
 <vertex x="3.202609375" y="-2.81495625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.607740625" y="-3.0734"/>
 <vertex x="3.62869375" y="-3.08736875"/>
 <vertex x="3.691559375" y="-3.171190625"/>
@@ -11759,7 +11758,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.62869375" y="-3.16420625"/>
 <vertex x="3.607740625" y="-3.066415625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.84170625" y="-3.75094375"/>
 <vertex x="-0.82075" y="-3.799840625"/>
 <vertex x="-0.79979375" y="-3.848734375"/>
@@ -11786,7 +11785,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.813765625" y="-3.85571875"/>
 <vertex x="-0.83471875" y="-3.743959375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="0.024434375" y="-4.149090625"/>
 <vertex x="0.010465625" y="-4.26085"/>
 <vertex x="0.024434375" y="-4.358640625"/>
@@ -11823,7 +11822,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="0.06634375" y="-4.24688125"/>
 <vertex x="0.03141875" y="-4.13511875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.684575" y="-4.149090625"/>
 <vertex x="3.76839375" y="-4.21195625"/>
 <vertex x="3.817290625" y="-4.30974375"/>
@@ -11838,7 +11837,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.656634375" y="-4.21195625"/>
 <vertex x="3.677590625" y="-4.163059375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="-0.010490625" y="-4.393565625"/>
 <vertex x="-0.010490625" y="-4.463415625"/>
 <vertex x="-0.024459375" y="-4.547234375"/>
@@ -11922,7 +11921,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="-0.00350625" y="-4.48436875"/>
 <vertex x="-0.024459375" y="-4.40055"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="0.91153125" y="-4.73583125"/>
 <vertex x="0.848665625" y="-4.80568125"/>
 <vertex x="0.813740625" y="-4.8895"/>
@@ -11956,7 +11955,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="0.94645625" y="-4.756784375"/>
 <vertex x="0.897559375" y="-4.72884375"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.211884375" y="-5.546090625"/>
 <vertex x="0.862634375" y="-5.546090625"/>
 <vertex x="0.862634375" y="-5.56704375"/>
@@ -11982,7 +11981,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="1.267765625" y="-5.615940625"/>
 <vertex x="1.21886875" y="-5.546090625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.97325" y="-5.546090625"/>
 <vertex x="1.309675" y="-5.546090625"/>
 <vertex x="1.351584375" y="-5.615940625"/>
@@ -11999,7 +11998,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="2.02214375" y="-5.60196875"/>
 <vertex x="1.980234375" y="-5.546090625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="1.97325" y="-5.546090625"/>
 <vertex x="1.95229375" y="-5.51815"/>
 <vertex x="1.88244375" y="-5.43433125"/>
@@ -12023,7 +12022,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="1.32364375" y="-5.53910625"/>
 <vertex x="1.98721875" y="-5.53910625"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.1607" y="-5.39940625"/>
 <vertex x="3.14673125" y="-5.46226875"/>
 <vertex x="3.167684375" y="-5.53211875"/>
@@ -12032,7 +12031,7 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 <vertex x="3.202609375" y="-5.455284375"/>
 <vertex x="3.153715625" y="-5.39241875"/>
 </polygon>
-<polygon width="0" layer="51">
+<polygon width="0" layer="21">
 <vertex x="3.28643125" y="-5.56704375"/>
 <vertex x="3.223565625" y="-5.581015625"/>
 <vertex x="3.1607" y="-5.60196875"/>
@@ -14440,6 +14439,20 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="133.5413" y1="20.955" x2="133.8613" y2="20.635" width="0.1524" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="7,39,e62d2a1ba9d09dc3"/>
+<approved hash="7,39,bfe70ba2c4f58895"/>
+<approved hash="7,39,ce881470140acef2"/>
+<approved hash="7,39,e6e45c3c5fce1d3c"/>
+<approved hash="7,39,bf6a7d8932af0866"/>
+<approved hash="7,39,664cdcec9f015ddc"/>
+<approved hash="7,39,6642a5efe61c5dda"/>
+<approved hash="7,39,4ef0140814c54e3d"/>
+<approved hash="7,39,bfe2fd32724048ed"/>
+<approved hash="7,39,bfe084370b5148ed"/>
+<approved hash="7,39,c1880470040ac1f2"/>
+<approved hash="7,39,41f0040804c5413d"/>
+</errors>
 </board>
 </drawing>
 <compatibility>
