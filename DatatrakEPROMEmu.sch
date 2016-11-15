@@ -13262,9 +13262,7 @@ Source: www.kingbright.com</description>
 <sheet>
 <description>CPLD</description>
 <plain>
-<text x="20.32" y="228.6" size="5.08" layer="91">TODO: Route FTDI I/F</text>
 <text x="327.66" y="208.28" size="3.81" layer="97">JTAG</text>
-<text x="292.1" y="157.48" size="1.778" layer="91">TODO: Status LEDs</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0"/>
@@ -13876,6 +13874,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB00_09"/>
 <wire x1="109.22" y1="88.9" x2="83.82" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="88.9" x2="81.28" y2="91.44" width="0.1524" layer="91"/>
+<label x="86.36" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV1" class="0">
@@ -13883,6 +13882,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB00_04"/>
 <wire x1="109.22" y1="119.38" x2="83.82" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="119.38" x2="81.28" y2="121.92" width="0.1524" layer="91"/>
+<label x="86.36" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV3" class="0">
@@ -13890,6 +13890,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB00_02"/>
 <wire x1="109.22" y1="124.46" x2="83.82" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="124.46" x2="81.28" y2="127" width="0.1524" layer="91"/>
+<label x="86.36" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV5" class="0">
@@ -13897,6 +13898,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB00_01"/>
 <wire x1="109.22" y1="127" x2="83.82" y2="127" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="127" x2="81.28" y2="129.54" width="0.1524" layer="91"/>
+<label x="86.36" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV7" class="0">
@@ -13904,6 +13906,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_16"/>
 <wire x1="109.22" y1="129.54" x2="83.82" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="129.54" x2="81.28" y2="132.08" width="0.1524" layer="91"/>
+<label x="86.36" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV15" class="0">
@@ -13911,6 +13914,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_15"/>
 <wire x1="109.22" y1="132.08" x2="83.82" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="132.08" x2="81.28" y2="134.62" width="0.1524" layer="91"/>
+<label x="86.36" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV10" class="0">
@@ -13918,6 +13922,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_14"/>
 <wire x1="109.22" y1="134.62" x2="83.82" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="134.62" x2="81.28" y2="137.16" width="0.1524" layer="91"/>
+<label x="86.36" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV13" class="0">
@@ -13925,6 +13930,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_12"/>
 <wire x1="109.22" y1="137.16" x2="83.82" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="137.16" x2="81.28" y2="139.7" width="0.1524" layer="91"/>
+<label x="86.36" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D_LV11" class="0">
@@ -13932,6 +13938,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_13"/>
 <wire x1="109.22" y1="139.7" x2="83.82" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="139.7" x2="81.28" y2="142.24" width="0.1524" layer="91"/>
+<label x="86.36" y="139.7" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="/RAM_LB" class="0">
@@ -13939,6 +13946,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_11"/>
 <wire x1="109.22" y1="142.24" x2="83.82" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="142.24" x2="81.28" y2="144.78" width="0.1524" layer="91"/>
+<label x="86.36" y="142.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="/RAM_UB" class="0">
@@ -13946,6 +13954,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_10"/>
 <wire x1="109.22" y1="144.78" x2="83.82" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="144.78" x2="81.28" y2="147.32" width="0.1524" layer="91"/>
+<label x="86.36" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="/RAM_OE" class="0">
@@ -13953,6 +13962,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_09"/>
 <wire x1="109.22" y1="149.86" x2="83.82" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="149.86" x2="81.28" y2="152.4" width="0.1524" layer="91"/>
+<label x="86.36" y="149.86" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA7" class="0">
@@ -13960,6 +13970,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_08"/>
 <wire x1="109.22" y1="152.4" x2="83.82" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="152.4" x2="81.28" y2="154.94" width="0.1524" layer="91"/>
+<label x="86.36" y="152.4" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA6" class="0">
@@ -13967,6 +13978,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_07"/>
 <wire x1="109.22" y1="154.94" x2="83.82" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="154.94" x2="81.28" y2="157.48" width="0.1524" layer="91"/>
+<label x="86.36" y="154.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA5" class="0">
@@ -13974,6 +13986,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_03"/>
 <wire x1="109.22" y1="157.48" x2="83.82" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="157.48" x2="81.28" y2="160.02" width="0.1524" layer="91"/>
+<label x="86.36" y="157.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA4" class="0">
@@ -13981,6 +13994,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_05"/>
 <wire x1="109.22" y1="160.02" x2="83.82" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="160.02" x2="81.28" y2="162.56" width="0.1524" layer="91"/>
+<label x="86.36" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA3" class="0">
@@ -13988,6 +14002,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_04"/>
 <wire x1="109.22" y1="162.56" x2="83.82" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="162.56" x2="81.28" y2="165.1" width="0.1524" layer="91"/>
+<label x="86.36" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RAMA2" class="0">
@@ -13995,6 +14010,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_01"/>
 <wire x1="134.62" y1="187.96" x2="134.62" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="210.82" x2="132.08" y2="213.36" width="0.1524" layer="91"/>
+<label x="134.62" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="RAMA1" class="0">
@@ -14002,6 +14018,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB01_00"/>
 <wire x1="137.16" y1="187.96" x2="137.16" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="210.82" x2="134.62" y2="213.36" width="0.1524" layer="91"/>
+<label x="137.16" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="RAMA0" class="0">
@@ -14009,6 +14026,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB03_16"/>
 <wire x1="142.24" y1="187.96" x2="142.24" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="210.82" x2="139.7" y2="213.36" width="0.1524" layer="91"/>
+<label x="142.24" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="/RAM_CS" class="0">
@@ -14016,6 +14034,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB03_15"/>
 <wire x1="144.78" y1="187.96" x2="144.78" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="210.82" x2="142.24" y2="213.36" width="0.1524" layer="91"/>
+<label x="144.78" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="D_LV12" class="0">
@@ -14023,6 +14042,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB03_14"/>
 <wire x1="147.32" y1="187.96" x2="147.32" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="210.82" x2="144.78" y2="213.36" width="0.1524" layer="91"/>
+<label x="147.32" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="D_LV14" class="0">
@@ -14030,6 +14050,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB03_12"/>
 <wire x1="149.86" y1="187.96" x2="149.86" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="210.82" x2="147.32" y2="213.36" width="0.1524" layer="91"/>
+<label x="149.86" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="D_LV9" class="0">
@@ -14037,6 +14058,7 @@ Source: www.kingbright.com</description>
 <pinref part="IC2" gate="G$1" pin="PB03_13"/>
 <wire x1="152.4" y1="187.96" x2="152.4" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="210.82" x2="149.86" y2="213.36" width="0.1524" layer="91"/>
+<label x="152.4" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="/TGT_DEN" class="0">
