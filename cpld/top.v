@@ -24,21 +24,20 @@ module top(
 	 // --- Target I/O lines ---
     input tgt_nPGMH,				// Program High -- from target
     input tgt_nPGML,				// Program Low -- from target
-    inout [17:0] addr_bus,		// SRAM Address bus -- shared between target and CPLD
+    input [17:0] addr_bus,		// Target Address bus
+										//		Target drives via buffer -- buffer always active
+    inout [15:0] data_bus,		// Target/SRAM Data bus -- shared between target and SRAM
 										//		CPLD drives direct (buffer disabled) when loading
 										//		Target drives via buffer (buffer active) when running
-    inout [15:0] data_bus,		// SRAM Data bus -- shared between target and CPLD
-										//		CPLD drives direct (buffer disabled) when loading
-										//		Target drives via buffer (buffer active) when running
+										//	   --> Output Enable: target_dbusbuf_en
+										//    --> Direction:     target_dbusbuf_dir
     input tgt_nCE,				// Chip enable from target
     input tgt_nOEL,				// OE Low from target
     input tgt_nOEH,				// OE High from target
 	
 	 // --- Target I/O control ---
-    output target_dbusbuf_dir,	// Data Bus Buffer Direction -- ??= from target to SRAM, ??= from SRAM to target
-    output target_dbusbuf_en,		// Data Bus Buffer Enable -- ??= enabled
-	 output target_abusbuf_en,		// Address Bus Buffer Enable -- ??= enabled.
-											//		If enabled, addr_bus must be Hi-Z!
+    output target_dbusbuf_dir,	// Data Bus Buffer Direction -- 0= from target to SRAM, 1= from SRAM to target
+    output target_dbusbuf_en,		// Data Bus Buffer Enable -- 0= target data drive enabled
 	 
 	 // --- FT240X USB FIFO ---
     inout [7:0] ft240x_d,		// FT240X 8-bit FIFO bus
@@ -48,6 +47,9 @@ module top(
     input ft240x_RXF,			//	FT240X Receive FIFO Empty: When high, do not read data from the FIFO
 	 	 
 	 // --- SRAM interface ---
+    output [17:0] sram_addr,	// SRAM Address bus -- shared between target and CPLD
+										//		CPLD drives direct (buffer disabled) when loading
+										//		Target drives via buffer (buffer active) when running
     output sram_nCS,				// SRAM chip select
     output sram_nWE,				// SRAM write enable
 	 output sram_nOE,				// SRAM output enable
@@ -87,10 +89,11 @@ assign exfiltration_addr_match =
 // Address counter
 reg[17:0] addr_counter;
 
-// Address bus:
-//		If the target is driving the address bus, our o/p should be Hi/Z
-//		Otherwise drive it from the address counter
-assign addr_bus = (target_abusbuf_en ? addr_counter : 18'hZ);
+// SRAM Address bus:
+//		If the target is driving the address bus, then the SRAM address is
+//		  sourced from the target address bus.
+//		Otherwise it's sourced from the address counter.
+assign sram_addr = ((mode == MODE_LOAD) ? addr_counter : addr_bus);
 
 // Data bus:
 //    If we're in LOAD mode, both the low and high words should be driven
@@ -108,18 +111,19 @@ assign data_bus = (mode == MODE_LOAD) ? {ft240x_d, ft240x_d} : 16'hZZZZ;
 
 // FIXME: All of these need checking
 
-// Address bus buffer enable
-//    This is enabled (target can drive address bus) if we're in RUN mode
-assign target_abusbuf_en = (mode == MODE_RUN);
-
 // Data bus buffer enable
 //    This is enabled (target can drive address bus) if we're in RUN mode
-assign target_dbusbuf_en = (mode == MODE_RUN);
+assign target_dbusbuf_en =
+	!(									// Active low!
+		(mode == MODE_RUN) &&			// Running, and
+		!tgt_nCE &&							// Target chip enable asserted, and
+		(!tgt_nOEL || !tgt_nOEH)		// Either target OELow or OEHigh asserted
+	);
 
 // Data bus buffer direction
 //    This is EPROM => Target all the time.
 //    NOTE: If we implement the read port, we need to add more logic here
-assign target_dbusbuf_dir = 1'b0;
+assign target_dbusbuf_dir = 1'b1;
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -135,6 +139,8 @@ parameter STATE_WRITE_1		= 4'h3;		// Write bytes 1/4
 parameter STATE_WRITE_HIGH	= 4'h4;		// Write bytes 2/4
 parameter STATE_WRITE_WAIT	= 4'h5;		// Write bytes 3/4
 parameter STATE_WRITE_LOW	= 4'h6;		// Write bytes 4/4
+parameter STATE_WRITE_EXFIL_A = 4'h7;	// Write Exfiltration Address 1/2
+parameter STATE_WRITE_EXFIL_B = 4'h8;	// Write Exfiltration Address 2/2
 
 reg [3:0] state;
 reg [3:0] count;
@@ -148,7 +154,8 @@ assign ft240x_nRD = !(
 								((state == STATE_WAITCMD) && (!ft240x_RXF)) ||
 								(state == STATE_GETCMD) ||
 								(state == STATE_WRITE_HIGH) ||
-								(state == STATE_WRITE_LOW)
+								(state == STATE_WRITE_LOW) ||
+								(state == STATE_WRITE_EXFIL_B)
 							);
 							
 // FTDI WR should always be inactive (for now)
@@ -230,13 +237,9 @@ always @(posedge clk24MHz) begin
 													// The following byte sets bits 15..8 of the address.
 													// Bits 7..0 are the data byte.
 													// 
+													exfiltration_addr[17:16] <= ft240x_d[1:0];
+													state <= STATE_WRITE_EXFIL_A;
 												end
-									
-									// TODO: Set exfiltration address b17, b16..8
-												
-									// future commands: increment the most significant
-									// nibble and use the least significant as a
-									// parameter.
 								endcase
 							end
 							
@@ -285,6 +288,20 @@ always @(posedge clk24MHz) begin
 									addr_counter <= addr_counter + 1;
 								end
 								
+		STATE_WRITE_EXFIL_A: begin
+									// WRITE EXFIL ADDR: wait for next byte
+									if (!ft240x_RXF) begin
+										// RXF clear: FT240X RX FIFO contains bytes
+										state <= STATE_WRITE_EXFIL_B;
+									end
+								end
+								
+		STATE_WRITE_EXFIL_B: begin
+									// WRITE EXFIL ADDR: second byte
+									exfiltration_addr[15:8] <= ft240x_d[7:0];
+									state <= STATE_WAITCMD;
+								end
+
 		default:			begin
 								// Default case, just go to the GETCMD state
 								state <= STATE_GETCMD;
