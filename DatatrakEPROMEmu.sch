@@ -13263,6 +13263,9 @@ Source: www.kingbright.com</description>
 <description>CPLD</description>
 <plain>
 <text x="327.66" y="208.28" size="3.81" layer="97">JTAG</text>
+<text x="27.94" y="231.14" size="5.08" layer="97">WARNING - GREENWIRE NEEDED
+
+D_LV8 -&gt; CPLD</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0"/>
@@ -14285,6 +14288,14 @@ Source: www.kingbright.com</description>
 <wire x1="172.72" y1="53.34" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="33.02" x2="170.18" y2="30.48" width="0.1524" layer="91"/>
 <label x="172.72" y="40.64" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="D_LV8" class="0">
+<segment>
+<pinref part="IC2" gate="G$1" pin="PB03_09"/>
+<wire x1="154.94" y1="187.96" x2="154.94" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="210.82" x2="152.4" y2="213.36" width="0.1524" layer="91"/>
+<label x="154.94" y="198.12" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>

@@ -13498,6 +13498,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="48.48" y1="38.4617" x2="50.1879" y2="36.7538" width="0.1524" layer="1"/>
 <wire x1="50.1879" y1="36.7538" x2="52.1462" y2="36.7538" width="0.1524" layer="1"/>
 <wire x1="34.163" y1="38.354" x2="35.2172" y2="38.354" width="0.1524" layer="1"/>
+<contactref element="IC2" pad="135"/>
+<wire x1="52.1462" y1="36.7538" x2="89.095" y2="46.895" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="D_LV9">
 <contactref element="U3" pad="40"/>
