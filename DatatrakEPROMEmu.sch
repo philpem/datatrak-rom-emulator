@@ -11534,6 +11534,9 @@ Source: www.kingbright.com</description>
 <text x="378.46" y="7.62" size="2.54" layer="97">A</text>
 <text x="289.56" y="33.02" size="2.54" layer="97" rot="MR180">EPROM emulator for Datatrak Mk2 Locator
   Target I/O and level translation</text>
+<text x="127" y="144.78" size="5.08" layer="97">TODO: Target Data Enable is wordwise, not bytewise.
+Is this a problem?
+Do we need a High DEN and Low DEN gated from OEL and OEH?</text>
 </plain>
 <instances>
 <instance part="X1" gate="-A1" x="40.64" y="220.98"/>
