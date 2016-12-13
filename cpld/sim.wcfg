@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Documents and Settings/Administrator/Desktop/dtrkeprom_cpld/mrw_test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="mrw_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/mrw_test/clk24MHz" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk24MHz</obj_property>
+      <obj_property name="ObjectShortName">clk24MHz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft240x_d" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ft240x_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ft240x_d[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft240x_RXF" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ft240x_RXF</obj_property>
+      <obj_property name="ObjectShortName">ft240x_RXF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft240x_nRD" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ft240x_nRD</obj_property>
+      <obj_property name="ObjectShortName">ft240x_nRD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft240x_TXE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ft240x_TXE</obj_property>
+      <obj_property name="ObjectShortName">ft240x_TXE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft240x_nWR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ft240x_nWR</obj_property>
+      <obj_property name="ObjectShortName">ft240x_nWR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/uut/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/uut/count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">count[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_addr[17:0]</obj_property>
+      <obj_property name="ObjectShortName">sram_addr[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/data_bus" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_bus[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_nUB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_nUB</obj_property>
+      <obj_property name="ObjectShortName">sram_nUB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_nLB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_nLB</obj_property>
+      <obj_property name="ObjectShortName">sram_nLB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_nWE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_nWE</obj_property>
+      <obj_property name="ObjectShortName">sram_nWE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_nCS" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_nCS</obj_property>
+      <obj_property name="ObjectShortName">sram_nCS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/sram_nOE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sram_nOE</obj_property>
+      <obj_property name="ObjectShortName">sram_nOE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/target_dbusbuf_dir" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">target_dbusbuf_dir</obj_property>
+      <obj_property name="ObjectShortName">target_dbusbuf_dir</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/target_dbusbuf_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">target_dbusbuf_en</obj_property>
+      <obj_property name="ObjectShortName">target_dbusbuf_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/addr_bus" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">addr_bus[17:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_bus[17:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/tgt_nCE" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tgt_nCE</obj_property>
+      <obj_property name="ObjectShortName">tgt_nCE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/tgt_nOEL" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tgt_nOEL</obj_property>
+      <obj_property name="ObjectShortName">tgt_nOEL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/tgt_nOEH" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tgt_nOEH</obj_property>
+      <obj_property name="ObjectShortName">tgt_nOEH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/tgt_nPGML" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tgt_nPGML</obj_property>
+      <obj_property name="ObjectShortName">tgt_nPGML</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/tgt_nPGMH" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tgt_nPGMH</obj_property>
+      <obj_property name="ObjectShortName">tgt_nPGMH</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/led_red" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">led_red</obj_property>
+      <obj_property name="ObjectShortName">led_red</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/led_amber" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">led_amber</obj_property>
+      <obj_property name="ObjectShortName">led_amber</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/led_green" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">led_green</obj_property>
+      <obj_property name="ObjectShortName">led_green</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft_data_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ft_data_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ft_data_o[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mrw_test/ft_addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ft_addr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ft_addr[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

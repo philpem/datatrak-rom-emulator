@@ -347,8 +347,8 @@ UsedLibrary="00_DatatrakEPROMEmu.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="-1 25 1364 718"
-State=1
+Loc="0 25 1365 718"
+State=3
 Number=0
 
 [Desktop]

@@ -54,7 +54,12 @@ module top(
     output sram_nWE,				// SRAM write enable
 	 output sram_nOE,				// SRAM output enable
     output sram_nUB,				// SRAM upper byte enable
-    output sram_nLB				// SRAM lower byte enable
+    output sram_nLB,				// SRAM lower byte enable
+	 
+	 // --- LEDs ---
+	 output led_red,				// Red LED, 1=on
+	 output led_amber,			// Amber LED, 1=on
+	 output led_green				// Green LED, 1=on
     );
 
 /////////////////////////////////////////////////////////////////////////////
@@ -89,6 +94,9 @@ assign exfiltration_addr_match =
 // Address counter
 reg[17:0] addr_counter;
 
+// Data output latch
+reg[15:0] sram_write_latch;
+
 // SRAM Address bus:
 //		If the target is driving the address bus, then the SRAM address is
 //		  sourced from the target address bus.
@@ -103,7 +111,7 @@ assign sram_addr = ((mode == MODE_LOAD) ? addr_counter : addr_bus);
 //    If we're in RUN mode, this should be Hi-Z.
 //        TODO: If we ever want to implement a "debug read" port, this won't always be Hi-Z
 //              the SRAM /CE logic will have to be changed too (gate it from the "read port address decode" line)
-assign data_bus = (mode == MODE_LOAD) ? {ft240x_d, ft240x_d} : 16'hZZZZ;
+assign data_bus = (mode == MODE_LOAD) ? sram_write_latch : 16'hZZZZ;
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -127,35 +135,44 @@ assign target_dbusbuf_dir = 1'b1;
 
 
 /////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
 // System state machine
 
-parameter STATE_WAITCMD 	= 4'h0;		// Wait for FTDI to signal RXE=0 (byte ready)
-parameter STATE_GETCMD  	= 4'h1;		// Get and decode a new command from the FTDI
-parameter STATE_SETMODE		= 4'h2;		// SET MODE
-parameter STATE_WRITE_1		= 4'h3;		// Write bytes 1/4
-parameter STATE_WRITE_HIGH	= 4'h4;		// Write bytes 2/4
-parameter STATE_WRITE_WAIT	= 4'h5;		// Write bytes 3/4
-parameter STATE_WRITE_LOW	= 4'h6;		// Write bytes 4/4
-parameter STATE_WRITE_EXFIL_A = 4'h7;	// Write Exfiltration Address 1/2
-parameter STATE_WRITE_EXFIL_B = 4'h8;	// Write Exfiltration Address 2/2
+parameter STATE_WAITCMD 			= 4'h0;	// Wait for FTDI to signal RXE=0 (byte ready)
+parameter STATE_CMD_PRERX  		= 4'h1;	// RX# going low just before command byte is read by the FSM
+parameter STATE_GETCMD  			= 4'h2;	// Get and decode a new command from the FTDI
+parameter STATE_SETMODE				= 4'h3;	// SET MODE
+parameter STATE_WRITE_1				= 4'h4;	// Write words 1/9
+parameter STATE_WRITE_HIGH_REQ	= 4'h5;	// Write words 2/9
+parameter STATE_WRITE_HIGH_LATCH	= 4'h6;	// Write words 3/9
+parameter STATE_WRITE_WAIT			= 4'h7;	// Write words 4/9
+parameter STATE_WRITE_LOW_REQ		= 4'h8;	// Write words 5/9
+parameter STATE_WRITE_LOW_LATCH	= 4'h9;	// Write words 6/9
+parameter STATE_WRITE_STROBE_WR	= 4'hA;	// Write words 7/9
+parameter STATE_WRITE_RELEASE_WR	= 4'hB;	// Write words 8/9
+parameter STATE_WRITE_INC_ADDR	= 4'hC;	// Write words 9/9
+parameter STATE_WRITE_EXFIL_A		= 4'hD;	// Write Exfiltration Address 1/2
+parameter STATE_WRITE_EXFIL_B		= 4'hE;	// Write Exfiltration Address 2/3
+parameter STATE_WRITE_EXFIL_C		= 4'hF;	// Write Exfiltration Address 3/3
 
 reg [3:0] state;
 reg [3:0] count;
 
+reg status_led;
+
 // FTDI RD should be active if:
-//   - We're in WAITCMD and there's a byte available
-//   - We're in the GETCMD state
+//   - Reading and processing the first byte of a command (in the GETCMD state)
 //   - Reading a byte from the FTDI's FIFO in order to program it into SRAM
+//   - Reading a byte which forms the second byte of a two-byte command
 //
 assign ft240x_nRD = !(
-								((state == STATE_WAITCMD) && (!ft240x_RXF)) ||
-								(state == STATE_GETCMD) ||
-								(state == STATE_WRITE_HIGH) ||
-								(state == STATE_WRITE_LOW) ||
-								(state == STATE_WRITE_EXFIL_B)
+								(state == STATE_CMD_PRERX) ||				// Wait state prior to processing the command
+								(state == STATE_GETCMD) ||					// Processing the command (RD# held)
+								(state == STATE_WRITE_HIGH_REQ) ||		// Requesting high byte from FT240X
+								(state == STATE_WRITE_HIGH_LATCH) ||	// Latching high byte into internal latch
+								(state == STATE_WRITE_LOW_REQ) ||		// Requesting low byte from FT240X
+								(state == STATE_WRITE_LOW_LATCH) ||		// Latching low byte into internal latch
+								(state == STATE_WRITE_EXFIL_B) ||		// Wait state prior to reading second byte of exfil address
+								(state == STATE_WRITE_EXFIL_C)			// Reading second byte of exfil address
 							);
 							
 // FTDI WR should always be inactive (for now)
@@ -165,7 +182,8 @@ assign ft240x_nWR = !(exfiltration_enable && !ft240x_TXE && exfiltration_addr_ma
 
 // FTDI data bus should normally be Hi-Z unless we're writing the low order
 // address bits back to the system ("exfiltration mode")
-assign ft240x_d = ft240x_nWR ? 8'hZ : addr_bus[7:0];
+assign ft240x_d = ft240x_nWR ? 8'hZZ : addr_bus[7:0];
+
 
 always @(posedge clk24MHz) begin
 
@@ -175,11 +193,18 @@ always @(posedge clk24MHz) begin
 								// Wait for a command from the FTDI
 								if (!ft240x_RXF) begin
 									// RXF clear (receive FIFO contains bytes)
-									state <= STATE_GETCMD;
+									state <= STATE_CMD_PRERX;
 								end else begin
 									// RXF set (receive FIFO is empty)
 									state <= STATE_WAITCMD;
 								end
+							end
+							
+		STATE_CMD_PRERX: begin
+								// This state only exists to add a 1tcy delay between RD# going low
+								// and reading the command code (to satisfy T3 in FT240X datasheet
+								// fig. 3.6: FIFO read timing diagram)
+								state <= STATE_GETCMD;
 							end
 							
 		STATE_GETCMD:	begin
@@ -207,8 +232,8 @@ always @(posedge clk24MHz) begin
 													 * 0001_Xemm	SET MODE
 													 * 
 													 * mm: mode
-													 *   00	Run
-													 *   01	Load
+													 *   00	Load
+													 *   01	Run
 													 *
 													 * e: exfiltration mode on/off
 													 *   0 = off, 1 = on
@@ -223,8 +248,8 @@ always @(posedge clk24MHz) begin
 												
 									8'b0010_xxxx:
 												begin
-													// 0010_nnnn	WRITE nnnn BYTES
-													//   nnnn: Number of bytes to write
+													// 0010_nnnn	WRITE nnnn WORDS
+													//   nnnn: Number of words to write
 													state <= STATE_WRITE_1;
 													count <= ft240x_d[3:0];
 												end
@@ -240,52 +265,115 @@ always @(posedge clk24MHz) begin
 													exfiltration_addr[17:16] <= ft240x_d[1:0];
 													state <= STATE_WRITE_EXFIL_A;
 												end
+
+									8'h55:
+												begin
+													// 0x55: Green LED on
+													state <= STATE_WAITCMD;
+													status_led <= 1'b1;
+												end
+												
+									8'hAA:
+												begin
+													// 0xAA: Green LED off
+													state <= STATE_WAITCMD;
+													status_led <= 1'b0;
+												end
+
+									default:
+												begin
+													// Undefined command
+													// Interpret as NOP
+													state <= STATE_WAITCMD;
+												end
+
 								endcase
 							end
 							
 		STATE_WRITE_1:	begin
 								// WRITE n, sub 1:
-								//   Wait for FTDI to have a byte in the fifo
-								//   Then request it.
-								if (count > 1) begin
-									if (!ft240x_RXF) begin
-										// RXF clear: FT240X RX FIFO contains bytes
-										// Decrement counter, prepare to clock out
-										count <= count - 1;
-										state <= STATE_WRITE_HIGH;
-									end
-								else
-									// All words copied, go back and wait for the next command
-									state <= STATE_WAITCMD;
+								//   Wait for the FT240X to present the high byte.
+								if (!ft240x_RXF) begin
+									// RXF clear: FT240X RX FIFO contains bytes
+									// Decrement counter, prepare to clock out
+									state <= STATE_WRITE_HIGH_REQ;
 								end
 							end
 			
+			// We don't need a wait-state for the RAM because WE# is level triggered
 			
-		STATE_WRITE_HIGH:	begin
+		STATE_WRITE_HIGH_REQ:	begin
 									// WRITE n, sub 2:
-									//		Write the high byte
-									//    Pretty much all the logic for this is above (upper strobe and FTDI Read)
+									//		Request the high byte from the FT240X
+									//    This satisfies FT240X datasheet fig. 3.6 T3: RD# Active to Valid Data
+									state <= STATE_WRITE_HIGH_LATCH;
+									count <= count - 1;
+								end
+								
+		STATE_WRITE_HIGH_LATCH: begin
+									// WRITE n, sub 3:
+									//		Latch the byte from the FT240X into the high
+									//    byte of the data latch
+									sram_write_latch[15:8] <= ft240x_d;
 									state <= STATE_WRITE_WAIT;
 								end
 		
 		STATE_WRITE_WAIT:	begin
-									// wait with FTDI inactive / wait for FIFO inactive
+									// WRITE n, sub 4:
+									//   Wait for the FT240X to present the low byte.
 									if (!ft240x_RXF) begin
 										// RXF clear: FT240X RX FIFO contains bytes
-										state <= STATE_WRITE_LOW;
+										state <= STATE_WRITE_LOW_REQ;
+									end else begin
+										state <= STATE_WRITE_WAIT;
 									end
 								end
 								
-		STATE_WRITE_LOW:	begin
-									// WRITE n, sub 4:
-									//		Write the low byte
-									//    Pretty much all the logic for this is above and below (lower strobe and FTDI Read)
-									
-									// Go back to waiting for the next command
-									state <= STATE_WAITCMD;
-									
-									// Increment the memory address
+		STATE_WRITE_LOW_REQ:	begin
+									// WRITE n, sub 5:
+									//		Request the low byte from the FT240X
+									//    This satisfies FT240X datasheet fig. 3.6 T3: RD# Active to Valid Data
+									state <= STATE_WRITE_LOW_LATCH;
+								end
+
+		STATE_WRITE_LOW_LATCH:	begin
+									// WRITE n, sub 6:
+									//		Latch the byte from the FT240X into the low
+									//    byte of the data latch
+									sram_write_latch[7:0] <= ft240x_d;
+									state <= STATE_WRITE_STROBE_WR;
+								end
+								
+		STATE_WRITE_STROBE_WR: begin
+									// WRITE n, sub 7:
+									//		Strobe the /WE line on the SRAM
+									//    Combinational logic for this is above and below.
+									//
+									// Alliance AS6C4016 datasheet "Write cycle 1 (WE# controlled)"
+									// Tdh (data hold time after WE# goes inactive) is zero.
+									// We add an extra state to make damn sure WE# is inactive before
+									// anything changes state.
+									state <= STATE_WRITE_RELEASE_WR;
+								end
+								
+		STATE_WRITE_RELEASE_WR: begin
+									// WRITE n, sub 7:
+									//		Release the /WE line on the SRAM
+									state <= STATE_WRITE_INC_ADDR;
+								end
+								
+		STATE_WRITE_INC_ADDR: begin
+									// WRITE n, sub 5:
+									// increment the address ready for the next word
 									addr_counter <= addr_counter + 1;
+
+									if (count != 0) begin
+										// Go back to waiting for the next word
+										state <= STATE_WRITE_1;
+									end else begin
+										// All words copied, go back and wait for the next command
+										state <= STATE_WAITCMD;
+									end
 								end
 								
 		STATE_WRITE_EXFIL_A: begin
@@ -297,6 +385,12 @@ always @(posedge clk24MHz) begin
 								end
 								
 		STATE_WRITE_EXFIL_B: begin
+									// WRITE EXFIL ADDR: RX# goes low here
+									// (wait state to satisfy FT240X fig 3.6 T3: RD# active to valid data)
+									state <= STATE_WRITE_EXFIL_C;
+								end
+								
+		STATE_WRITE_EXFIL_C: begin
 									// WRITE EXFIL ADDR: second byte
 									exfiltration_addr[15:8] <= ft240x_d[7:0];
 									state <= STATE_WAITCMD;
@@ -311,38 +405,35 @@ always @(posedge clk24MHz) begin
 
 end
 
+
 /////////////////////////////////////////////////////////////////////////////
 // SRAM pin logic
 
 // SRAM chip select
-//    In load mode --
-//       Permanently enabled.
-//    In run mode  --
-//       Source from target nCE
-assign sram_nCS = (mode == MODE_LOAD) ? 1'b0 : tgt_nCE;
-	
+// Permanently enabled to reduce access time.
+assign sram_nCS = 1'b0;
+
 
 // SRAM upper and lower byte enable
-//    In load mode --
-//       upper enable active when in WRITE HIGH BYTE state
-//       lower enable active when in WRITE LOW BYTE state
-//    In run mode  -- 
-//       source from target OEH and OEL
-assign sram_nUB = (mode == MODE_LOAD) ? !(state == STATE_WRITE_HIGH) : tgt_nOEH;
-assign sram_nLB = (mode == MODE_LOAD) ? !(state == STATE_WRITE_LOW)  : tgt_nOEL;
+//
+//   Due to bit reordering to ease PCB layout easier, these aren't usable.
+//   They are tied permanently low (enabled), making the SRAM a 16-bit
+//   only device.
+assign sram_nUB = 1'b0;
+assign sram_nLB = 1'b0;
 
 
 // SRAM write enable
 //    In load mode --
-//       Load the upper or lower byte when it's been latched from the FTDI
+//       Load a complete word from the write latch when it's ready
 //    In run mode --
 //       Disabled: "ROM" mode; no writes to the emulated ROM are allowed
 //         TODO: Future improvement. "Magic knock" could allow writes to ROM,
 //         but this would need access to the R/!W line from the Datatrak
 //         Locator. This is probably more trouble than it's worth.
-assign sram_nWE = (mode == MODE_LOAD) ? 
-	!((state == STATE_WRITE_HIGH) || (state == STATE_WRITE_LOW)) :
-	1'b1;
+assign sram_nWE = (mode == MODE_LOAD) ?
+	/* load mode */	!((state == STATE_WRITE_STROBE_WR) && !clk24MHz)
+	/* run mode */		: 1'b1;
 
 
 // SRAM output enable
@@ -351,6 +442,21 @@ assign sram_nWE = (mode == MODE_LOAD) ?
 //    In run mode  --
 //       Output enabled  (active low)
 assign sram_nOE = !(mode == MODE_RUN);
+
+
+/////////////////////////////////////////////////////////////////////////////
+// LEDs
+
+// Red LED = Activity. FTDI USB is being read from or written to.
+assign led_red = !ft240x_nRD || !ft240x_nWR;
+
+// Amber LED = Load mode
+assign led_amber = (mode == MODE_LOAD);
+
+// Green LED = Run mode
+//assign led_green = (mode == MODE_RUN);
+assign led_green = status_led;
+
 
 /////////////////////////////////////////////////////////////////////////////
 

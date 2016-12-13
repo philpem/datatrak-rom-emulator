@@ -21,8 +21,231 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="dtrk_eprom_emu.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_CMD" xil_pn:name="_impact.cmd"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="_impact.log"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="_impactbatch.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_CMD" xil_pn:name="ise_impact.cmd"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mrw_test_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="mrw_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="mrw_test_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mrw_test_stx_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="testtop_addr_loopback.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="testtop_addr_loopback.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="testtop_addr_loopback.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="testtop_addr_loopback.jed"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="testtop_addr_loopback.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="testtop_addr_loopback.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="testtop_addr_loopback.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="testtop_addr_loopback.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="testtop_addr_loopback.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="testtop_addr_loopback.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="testtop_addr_loopback.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="testtop_addr_loopback.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="testtop_addr_loopback.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_addr_loopback.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="testtop_addr_loopback.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="testtop_addr_loopback.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_addr_loopback.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_addr_loopback.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="testtop_addr_loopback.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_addr_loopback.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="testtop_addr_loopback.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_addr_loopback_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="testtop_addr_loopback_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="testtop_addr_loopback_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="testtop_addr_loopback_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="testtop_addr_loopback_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="testtop_addr_loopback_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="testtop_addr_loopback_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="testtop_data_checkerboard.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="testtop_data_checkerboard.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="testtop_data_checkerboard.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="testtop_data_checkerboard.jed"/>
+    <file xil_pn:fileType="FILE_LFP" xil_pn:name="testtop_data_checkerboard.lfp"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="testtop_data_checkerboard.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="testtop_data_checkerboard.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="testtop_data_checkerboard.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="testtop_data_checkerboard.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="testtop_data_checkerboard.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="testtop_data_checkerboard.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="testtop_data_checkerboard.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="testtop_data_checkerboard.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="testtop_data_checkerboard.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_data_checkerboard.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="testtop_data_checkerboard.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="testtop_data_checkerboard.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_data_checkerboard.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_data_checkerboard.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="testtop_data_checkerboard.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_data_checkerboard.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="testtop_data_checkerboard.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="testtop_data_checkerboard_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="testtop_data_checkerboard_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="testtop_data_checkerboard_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="testtop_data_checkerboard_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="testtop_data_checkerboard_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="testtop_data_checkerboard_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="testtop_data_checkerboard_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="top.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="top.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="top.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="top.jed"/>
+    <file xil_pn:fileType="FILE_LFP" xil_pn:name="top.lfp"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="top.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="top.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="top.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="top.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="top.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="top.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="top.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="top.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="top.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="top.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="top.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="top.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="top.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="top.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="top.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="top.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="top_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="top_html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="top_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="top_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1481583875" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1481583875">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591124" xil_pn:in_ck="-2751414252779266889" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1481591124">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="mrw_test.v"/>
+      <outfile xil_pn:name="testtop_addr_loopback.v"/>
+      <outfile xil_pn:name="testtop_data_checkerboard.v"/>
+      <outfile xil_pn:name="top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1481583875" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4123002926701105604" xil_pn:start_ts="1481583875">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591124" xil_pn:in_ck="-2751414252779266889" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1481591124">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="mrw_test.v"/>
+      <outfile xil_pn:name="testtop_addr_loopback.v"/>
+      <outfile xil_pn:name="testtop_data_checkerboard.v"/>
+      <outfile xil_pn:name="top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591127" xil_pn:in_ck="-2751414252779266889" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2700004987584933557" xil_pn:start_ts="1481591124">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="mrw_test_beh.prj"/>
+      <outfile xil_pn:name="mrw_test_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591128" xil_pn:in_ck="8765461776215963302" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4743587725733035253" xil_pn:start_ts="1481591127">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="mrw_test_isim_beh.wdb"/>
+    </transform>
+    <transform xil_pn:end_ts="1481507574" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1481507574">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591552" xil_pn:in_ck="5380796325579858910" xil_pn:name="TRANEXT_xstsynthesize_xc9500xl" xil_pn:prop_ck="-5819887724125342218" xil_pn:start_ts="1481591536">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="top.lso"/>
+      <outfile xil_pn:name="top.ngc"/>
+      <outfile xil_pn:name="top.ngr"/>
+      <outfile xil_pn:name="top.prj"/>
+      <outfile xil_pn:name="top.stx"/>
+      <outfile xil_pn:name="top.syr"/>
+      <outfile xil_pn:name="top.xst"/>
+      <outfile xil_pn:name="top_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1481583154" xil_pn:in_ck="154288920063" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="3734212952611957" xil_pn:start_ts="1481583153">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591564" xil_pn:in_ck="7455113753350797059" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="-1996509353111835880" xil_pn:start_ts="1481591552">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="top.bld"/>
+      <outfile xil_pn:name="top.ngd"/>
+      <outfile xil_pn:name="top_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591586" xil_pn:in_ck="154288912570" xil_pn:name="TRANEXT_vm6File_xc9500xl" xil_pn:prop_ck="-4677596270923388" xil_pn:start_ts="1481591564">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="top.gyd"/>
+      <outfile xil_pn:name="top.mfd"/>
+      <outfile xil_pn:name="top.nga"/>
+      <outfile xil_pn:name="top.pad"/>
+      <outfile xil_pn:name="top.pnx"/>
+      <outfile xil_pn:name="top.rpt"/>
+      <outfile xil_pn:name="top.tim"/>
+      <outfile xil_pn:name="top.tspec"/>
+      <outfile xil_pn:name="top.vm6"/>
+      <outfile xil_pn:name="top.xml"/>
+      <outfile xil_pn:name="top_build.xml"/>
+      <outfile xil_pn:name="top_html"/>
+      <outfile xil_pn:name="top_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591589" xil_pn:in_ck="154288921434" xil_pn:name="TRANEXT_crtProg_xc9500" xil_pn:prop_ck="-894293648969726702" xil_pn:start_ts="1481591586">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="top.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1481591593" xil_pn:in_ck="154288908148" xil_pn:name="TRAN_impactProgrammingTool_CPLD" xil_pn:prop_ck="-8487078306172248444" xil_pn:start_ts="1481591593">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_impact.cmd"/>
+      <outfile xil_pn:name="_impact.log"/>
+      <outfile xil_pn:name="_impactbatch.log"/>
+      <outfile xil_pn:name="ise_impact.cmd"/>
+    </transform>
+    <transform xil_pn:end_ts="1481583188" xil_pn:in_ck="154288921434" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1481583185">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+  </transforms>
 
 </generated_project>
