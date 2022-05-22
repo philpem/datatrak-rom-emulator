@@ -1,0 +1,8 @@
+*.b\#?
+*.s\#?
+*.l\#?
+*~
+.*.sw?
+cpld/*.html
+cpld/*.err
+cpld/_xmsgs/*
