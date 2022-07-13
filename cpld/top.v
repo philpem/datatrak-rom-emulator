@@ -137,23 +137,23 @@ assign target_dbusbuf_dir = 1'b1;
 /////////////////////////////////////////////////////////////////////////////
 // System state machine
 
-parameter STATE_NEXTCMD				= 5'h1F;
-parameter STATE_WAITCMD 			= 5'h0;	// Wait for FTDI to signal RXE=0 (byte ready)
-parameter STATE_CMD_PRERX  		= 5'h1;	// RX# going low just before command byte is read by the FSM
-parameter STATE_GETCMD  			= 5'h2;	// Get and decode a new command from the FTDI
-parameter STATE_SETMODE				= 5'h3;	// SET MODE
-parameter STATE_WRITE_1				= 5'h4;	// Write words 1/9
-parameter STATE_WRITE_HIGH_REQ	= 5'h5;	// Write words 2/9
-parameter STATE_WRITE_HIGH_LATCH	= 5'h6;	// Write words 3/9
-parameter STATE_WRITE_WAIT			= 5'h7;	// Write words 4/9
-parameter STATE_WRITE_LOW_REQ		= 5'h8;	// Write words 5/9
-parameter STATE_WRITE_LOW_LATCH	= 5'h9;	// Write words 6/9
-parameter STATE_WRITE_STROBE_WR	= 5'hA;	// Write words 7/9
-parameter STATE_WRITE_RELEASE_WR	= 5'hB;	// Write words 8/9
-parameter STATE_WRITE_INC_ADDR	= 5'hC;	// Write words 9/9
-parameter STATE_WRITE_EXFIL_A		= 5'hD;	// Write Exfiltration Address 1/2
-parameter STATE_WRITE_EXFIL_B		= 5'hE;	// Write Exfiltration Address 2/3
-parameter STATE_WRITE_EXFIL_C		= 5'hF;	// Write Exfiltration Address 3/3
+parameter STATE_NEXTCMD				= 5'h00;
+parameter STATE_WAITCMD 			= 5'h01;	// Wait for FTDI to signal RXE=0 (byte ready)
+parameter STATE_CMD_PRERX  		= 5'h02;	// RX# going low just before command byte is read by the FSM
+parameter STATE_GETCMD  			= 5'h03;	// Get and decode a new command from the FTDI
+parameter STATE_SETMODE				= 5'h04;	// SET MODE
+parameter STATE_WRITE_1				= 5'h05;	// Write words 1/9
+parameter STATE_WRITE_HIGH_REQ	= 5'h06;	// Write words 2/9
+parameter STATE_WRITE_HIGH_LATCH	= 5'h07;	// Write words 3/9
+parameter STATE_WRITE_WAIT			= 5'h08;	// Write words 4/9
+parameter STATE_WRITE_LOW_REQ		= 5'h09;	// Write words 5/9
+parameter STATE_WRITE_LOW_LATCH	= 5'h0A;	// Write words 6/9
+parameter STATE_WRITE_STROBE_WR	= 5'h0B;	// Write words 7/9
+parameter STATE_WRITE_RELEASE_WR	= 5'h0C;	// Write words 8/9
+parameter STATE_WRITE_INC_ADDR	= 5'h0D;	// Write words 9/9
+parameter STATE_WRITE_EXFIL_A		= 5'h0E;	// Write Exfiltration Address 1/2
+parameter STATE_WRITE_EXFIL_B		= 5'h0F;	// Write Exfiltration Address 2/3
+parameter STATE_WRITE_EXFIL_C		= 5'h10;	// Write Exfiltration Address 3/3
 
 reg [4:0] state;
 reg [3:0] count;
