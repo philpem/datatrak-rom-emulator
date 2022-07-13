@@ -459,15 +459,33 @@ assign sram_nOE = !(mode == MODE_RUN);
 /////////////////////////////////////////////////////////////////////////////
 // LEDs
 
-// Red LED = Activity. FTDI USB is being read from or written to.
-assign led_red = !ft240x_nRD || !ft240x_nWR;
+// Activity LED hold timer
+// This extends the activity blink
+reg [7:0] act_led_ctr;
 
-// Amber LED = Load mode
-assign led_amber = (mode == MODE_LOAD);
+wire act = (!ft240x_nRD || !ft240x_nWR);
 
-// Green LED = Run mode
-//assign led_green = (mode == MODE_RUN);
-assign led_green = status_led;
+always @(posedge clk24MHz or posedge act) begin
+	if (act) begin
+		act_led_ctr <= 8'd255;
+	end else begin
+		if (act_led_ctr > 0) begin
+			act_led_ctr <= act_led_ctr - 8'd1;
+		end
+	end
+end
+
+// Red LED = Exfiltration / Activity. Solid on if Exfiltration is emabled.
+//   Blinks when FTDI USB is being read from or written to.
+assign led_red = exfiltration_enable ^ (act_led_ctr > 8'd0);
+
+// Amber LED = Mode 1 XOR status LED.
+//   Mode1 bit is unused, so this should always show the status LED state.
+assign led_amber = status_led ^ mode[1];
+
+// Green LED - Mode 0
+//   Off for Load mode, on for Run mode
+assign led_green = mode[0];
 
 
 /////////////////////////////////////////////////////////////////////////////
