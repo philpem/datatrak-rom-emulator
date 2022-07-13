@@ -399,6 +399,9 @@ always @(posedge clk24MHz) begin
 		default:			begin
 								// Default case, just go to the GETCMD state
 								state <= STATE_GETCMD;
+								mode <= MODE_LOAD;
+								exfiltration_enable <= 1'b0;
+								status_led <= 1'b0;
 							end
 	
 	endcase
