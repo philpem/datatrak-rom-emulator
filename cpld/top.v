@@ -83,7 +83,7 @@ reg exfiltration_enable;
 reg [17:8] exfiltration_addr;
 
 // Exfiltration mode address match
-assign exfiltration_addr_match =
+wire exfiltration_addr_match =
 	(mode == MODE_RUN) &&
 	(addr_bus[17:8] == exfiltration_addr[17:8]);
 
@@ -218,7 +218,7 @@ always @(posedge clk24MHz) begin
 							
 		STATE_GETCMD:	begin
 								// Read the contents of the FTDI data bus and decode
-								casex (ft240x_d)
+								casez (ft240x_d)
 									8'b0000_0000:
 												begin
 													// 0000_0000	NOP
@@ -235,7 +235,7 @@ always @(posedge clk24MHz) begin
 													addr_counter <= 0;
 												end
 
-									8'b0001_xxxx:
+									8'b0001_????:
 												begin
 													/***
 													 * 0001_Xemm	SET MODE
@@ -255,7 +255,7 @@ always @(posedge clk24MHz) begin
 													exfiltration_enable <= ft240x_d[2];
 												end
 												
-									8'b0010_xxxx:
+									8'b0010_????:
 												begin
 													// 0010_nnnn	WRITE nnnn WORDS
 													//   nnnn: Number of words to write
@@ -263,7 +263,7 @@ always @(posedge clk24MHz) begin
 													count <= ft240x_d[3:0];
 												end
 									
-									8'b0100_xxxx:
+									8'b0100_????:
 												begin
 													// 0100_nnEE	Set exfiltration address
 													//		EE:	Bits 17 and 16 of the address
