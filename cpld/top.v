@@ -137,24 +137,25 @@ assign target_dbusbuf_dir = 1'b1;
 /////////////////////////////////////////////////////////////////////////////
 // System state machine
 
-parameter STATE_WAITCMD 			= 4'h0;	// Wait for FTDI to signal RXE=0 (byte ready)
-parameter STATE_CMD_PRERX  		= 4'h1;	// RX# going low just before command byte is read by the FSM
-parameter STATE_GETCMD  			= 4'h2;	// Get and decode a new command from the FTDI
-parameter STATE_SETMODE				= 4'h3;	// SET MODE
-parameter STATE_WRITE_1				= 4'h4;	// Write words 1/9
-parameter STATE_WRITE_HIGH_REQ	= 4'h5;	// Write words 2/9
-parameter STATE_WRITE_HIGH_LATCH	= 4'h6;	// Write words 3/9
-parameter STATE_WRITE_WAIT			= 4'h7;	// Write words 4/9
-parameter STATE_WRITE_LOW_REQ		= 4'h8;	// Write words 5/9
-parameter STATE_WRITE_LOW_LATCH	= 4'h9;	// Write words 6/9
-parameter STATE_WRITE_STROBE_WR	= 4'hA;	// Write words 7/9
-parameter STATE_WRITE_RELEASE_WR	= 4'hB;	// Write words 8/9
-parameter STATE_WRITE_INC_ADDR	= 4'hC;	// Write words 9/9
-parameter STATE_WRITE_EXFIL_A		= 4'hD;	// Write Exfiltration Address 1/2
-parameter STATE_WRITE_EXFIL_B		= 4'hE;	// Write Exfiltration Address 2/3
-parameter STATE_WRITE_EXFIL_C		= 4'hF;	// Write Exfiltration Address 3/3
+parameter STATE_NEXTCMD				= 5'h1F;
+parameter STATE_WAITCMD 			= 5'h0;	// Wait for FTDI to signal RXE=0 (byte ready)
+parameter STATE_CMD_PRERX  		= 5'h1;	// RX# going low just before command byte is read by the FSM
+parameter STATE_GETCMD  			= 5'h2;	// Get and decode a new command from the FTDI
+parameter STATE_SETMODE				= 5'h3;	// SET MODE
+parameter STATE_WRITE_1				= 5'h4;	// Write words 1/9
+parameter STATE_WRITE_HIGH_REQ	= 5'h5;	// Write words 2/9
+parameter STATE_WRITE_HIGH_LATCH	= 5'h6;	// Write words 3/9
+parameter STATE_WRITE_WAIT			= 5'h7;	// Write words 4/9
+parameter STATE_WRITE_LOW_REQ		= 5'h8;	// Write words 5/9
+parameter STATE_WRITE_LOW_LATCH	= 5'h9;	// Write words 6/9
+parameter STATE_WRITE_STROBE_WR	= 5'hA;	// Write words 7/9
+parameter STATE_WRITE_RELEASE_WR	= 5'hB;	// Write words 8/9
+parameter STATE_WRITE_INC_ADDR	= 5'hC;	// Write words 9/9
+parameter STATE_WRITE_EXFIL_A		= 5'hD;	// Write Exfiltration Address 1/2
+parameter STATE_WRITE_EXFIL_B		= 5'hE;	// Write Exfiltration Address 2/3
+parameter STATE_WRITE_EXFIL_C		= 5'hF;	// Write Exfiltration Address 3/3
 
-reg [3:0] state;
+reg [4:0] state;
 reg [3:0] count;
 
 reg status_led;
@@ -189,6 +190,14 @@ always @(posedge clk24MHz) begin
 
 	case (state)
 	
+		STATE_NEXTCMD: begin
+								// Precharge wait to satisfy FTDI timing
+								// This stops us from accidentally reading a false command byte
+								// if the FT240X buffer empties. Sometimes there's a delay before
+								// RXF goes high (no data available).
+								state <= STATE_WAITCMD;
+							end
+	
 		STATE_WAITCMD:	begin
 								// Wait for a command from the FTDI
 								if (!ft240x_RXF) begin
@@ -214,13 +223,13 @@ always @(posedge clk24MHz) begin
 												begin
 													// 0000_0000	NOP
 													// Used to reset the state machine to a known state
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 												end
 												
 									8'b0000_0001:
 												begin
 													// 0000_0001	Reset Memory Address Counter
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 													
 													// Set memory address to zero
 													addr_counter <= 0;
@@ -241,7 +250,7 @@ always @(posedge clk24MHz) begin
 													 * X: don't care
 													 */
 													 
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 													mode <= ft240x_d[1:0];
 													exfiltration_enable <= ft240x_d[2];
 												end
@@ -269,14 +278,14 @@ always @(posedge clk24MHz) begin
 									8'h55:
 												begin
 													// 0x55: Green LED on
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 													status_led <= 1'b1;
 												end
 												
 									8'hAA:
 												begin
 													// 0xAA: Green LED off
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 													status_led <= 1'b0;
 												end
 
@@ -284,7 +293,7 @@ always @(posedge clk24MHz) begin
 												begin
 													// Undefined command
 													// Interpret as NOP
-													state <= STATE_WAITCMD;
+													state <= STATE_NEXTCMD;
 												end
 
 								endcase
@@ -372,7 +381,7 @@ always @(posedge clk24MHz) begin
 										state <= STATE_WRITE_1;
 									end else begin
 										// All words copied, go back and wait for the next command
-										state <= STATE_WAITCMD;
+										state <= STATE_NEXTCMD;
 									end
 								end
 								
@@ -393,12 +402,12 @@ always @(posedge clk24MHz) begin
 		STATE_WRITE_EXFIL_C: begin
 									// WRITE EXFIL ADDR: second byte
 									exfiltration_addr[15:8] <= ft240x_d[7:0];
-									state <= STATE_WAITCMD;
+									state <= STATE_NEXTCMD;
 								end
 
 		default:			begin
-								// Default case, just go to the GETCMD state
-								state <= STATE_GETCMD;
+								// Default case, just go to the NEXTCMD state
+								state <= STATE_NEXTCMD;
 								mode <= MODE_LOAD;
 								exfiltration_enable <= 1'b0;
 								status_led <= 1'b0;
