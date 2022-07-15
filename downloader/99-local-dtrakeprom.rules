@@ -1,0 +1,7 @@
+# allow non-supervisor access
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", MODE:="0666"
+
+# unbind the ftdi_sio driver
+#SUBSYSTEMS=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{product}=="Datatrak Locator ROM emulator", RUN+="/bin/sh -c ‘echo $kernel > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+#SUBSYSTEMS=="usb", DRIVERS=="ftdi_sio", ATTRS{interface}=="Datatrak Locator ROM emulator", RUN+="/bin/sh -c ‘echo $kernel > /sys/bus/usb/drivers/ftdi_sio/unbind'"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0403" ,ATTRS{idProduct}=="6015", ATTRS{product}=="Datatrak Locator ROM emulator", RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"
